@@ -40,6 +40,22 @@ public class MainActivity extends AppCompatActivity {
             mDots[i].setTextColor(getResources().getColor(R.color.colorTransparentWhite));
 
             linearLayoutDot.addView(mDots[i]);
+        }
+    }
+
+    ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
 
         }
     }
