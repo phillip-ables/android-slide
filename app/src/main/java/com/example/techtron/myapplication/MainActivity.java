@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         sliderAdapter = new SliderAdapter(this);
 
         viewPagerSlide.setAdapter(sliderAdapter);
+
+        addDotsIndicator();
     }
 
     public void addDotsIndicator(){
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             mDots[i].setTextSize(35);
             mDots[i].setTextColor(getResources().getColor(R.color.colorTransparentWhite));
 
-            
+            linearLayoutDot.addView(mDots[i]);
 
         }
     }
