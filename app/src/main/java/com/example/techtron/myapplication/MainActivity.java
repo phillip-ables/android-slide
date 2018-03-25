@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addDotsIndicator(int position){
-
         mDots = new TextView[3];
+        linearLayoutDot.removeAllViews();
 
         for(int i =0; i < mDots.length; i++){
             mDots[i] = new TextView(this);
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
             linearLayoutDot.addView(mDots[i]);
         }
+
         if(mDots.length > 0){
             mDots[position].setTextColor(getResources().getColor(R.color.colorWhite));
         }
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onPageSelected(int position) {
-            addDotsIndicator(i);
+            addDotsIndicator(position);
         }
 
         @Override
