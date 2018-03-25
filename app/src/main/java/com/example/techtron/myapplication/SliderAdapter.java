@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 public class SliderAdapter extends PagerAdapter {
@@ -41,5 +42,12 @@ public class SliderAdapter extends PagerAdapter {
     public boolean isViewFromObject(View view, Object object) {
         return view == (RelativeLayout) object;
     }
+    //to inflate all of the view inside the adapter
+    @Override
+    public Object instantiateItem(ViewGroup container, int position) {
+        layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+        View view = layoutInflater.inflate(R.layout.slide_layout, container, false);
 
+        return view;
+    }
 }
