@@ -26,10 +26,12 @@ public class MainActivity extends AppCompatActivity {
 
         viewPagerSlide.setAdapter(sliderAdapter);
 
-        addDotsIndicator();
+        addDotsIndicator(0);
+
+        viewPagerSlide.addOnPageChangeListener(viewListener);
     }
 
-    public void addDotsIndicator(){
+    public void addDotsIndicator(int position){
 
         mDots = new TextView[3];
 
@@ -41,22 +43,25 @@ public class MainActivity extends AppCompatActivity {
 
             linearLayoutDot.addView(mDots[i]);
         }
+        if(mDots.length > 0){
+            mDots[position].setTextColor(getResources().getColor(R.color.colorWhite));
+        }
     }
 
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            
+
         }
 
         @Override
         public void onPageSelected(int position) {
-
+            addDotsIndicator(i);
         }
 
         @Override
         public void onPageScrollStateChanged(int state) {
 
         }
-    }
+    };
 }
