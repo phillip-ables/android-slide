@@ -35,8 +35,20 @@ public class MainActivity extends AppCompatActivity {
         viewPagerSlide.setAdapter(sliderAdapter);
 
         addDotsIndicator(0);
-
         viewPagerSlide.addOnPageChangeListener(viewListener);
+
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPagerSlide.setCurrentItem(currentPage++);
+            }
+        });
+        buttonPrev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPagerSlide.setCurrentItem(currentPage--);
+            }
+        });
     }
 
     public void addDotsIndicator(int position){

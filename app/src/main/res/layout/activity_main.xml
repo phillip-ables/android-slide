@@ -29,7 +29,7 @@
         android:id="@+id/buttonPrevious"
         android:layout_width="90dp"
         android:layout_height="40dp"
-        android:text="Prev"
+        android:text=""
         android:layout_alignParentBottom="true"
         android:background="@android:color/transparent"/>
     <Button
