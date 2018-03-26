@@ -4,6 +4,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,12 +16,18 @@ public class MainActivity extends AppCompatActivity {
 
     private SliderAdapter sliderAdapter;
 
+    private Button buttonNext, buttonPrev;
+    private int currentPage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewPagerSlide = (ViewPager) findViewById(R.id.viewPagerSlide);
         linearLayoutDot = (LinearLayout) findViewById(R.id.linearLayoutDot);
+
+        buttonNext = (Button) findViewById(R.id.buttonNext);
+        buttonPrev = (Button ) findViewById(R.id.buttonPrevious);
 
         sliderAdapter = new SliderAdapter(this);
 
