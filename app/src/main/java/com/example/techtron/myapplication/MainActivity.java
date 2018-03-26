@@ -4,6 +4,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -65,6 +66,30 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onPageSelected(int position) {
             addDotsIndicator(position);
+            currentPage = position;
+
+            if(position == 0){
+                buttonNext.setEnabled(true);
+                buttonPrev.setEnabled(false);
+                buttonPrev.setVisibility(View.INVISIBLE);
+
+                buttonNext.setText("Next");
+                buttonPrev.setText("");
+            } else if ( position == mDots.length -1) {
+                buttonNext.setEnabled(true);
+                buttonPrev.setEnabled(true);
+                buttonPrev.setVisibility(View.VISIBLE);
+
+                buttonNext.setText("Finish");
+                buttonPrev.setText("Back");
+            }else {
+                buttonNext.setEnabled(true);
+                buttonPrev.setEnabled(true);
+                buttonPrev.setVisibility(View.VISIBLE);
+
+                buttonNext.setText("Next");
+                buttonPrev.setText("Back");
+            }
         }
 
         @Override
